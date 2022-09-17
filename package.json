@@ -1,0 +1,22 @@
+{
+  "name": "reactapp",
+  "version": "1.0.0",
+  "description": "My business App",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node backend/Server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tezerac/ReactApp.git"
+  },
+  "author": "Tezera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tezerac/ReactApp/issues"
+  },
+  "homepage": "https://github.com/tezerac/ReactApp#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
