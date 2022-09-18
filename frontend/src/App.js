@@ -1,13 +1,15 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import {Container} from 'react-bootstrap'
-import HomeScreen from "./screens/HomeScreen";
+import {Container} from 'react-bootstrap';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import ProductScreen from "./screens/ProductScreen";
-const App=()=> {
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
+
+//arrow functions
+const App = () => {
   return (
     <>
-       <Router>
+     <Router>
         <Header />
         <main className='py-3'>
           <Container>
@@ -20,7 +22,7 @@ const App=()=> {
         <Footer />
       </Router>
     </>
-  );
-}
+    );
+  }
+  export default App;
 
-export default App;

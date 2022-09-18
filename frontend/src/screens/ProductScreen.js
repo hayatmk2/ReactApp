@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
-import products from '../products';
 import Rating from '../components/Rating';
+import axios from 'axios';
 
 const ProductScreen = () => {
   const params = useParams();
-
-  const product = products.find((p) => p._id === params.id)
+  const [product, setProduct] = useState({});
+  useState(()=>{
+   const fetchProduct = async()=>{
+    const {data} = await axios.get(`/api/products/${params.id}`)
+   setProduct(data);
+ }
+ fetchProduct();
+ },[])
+ // const product = products.find((p) => p._id === params.id)
   return (
     <>
       <Link className='btn btn-light my-3' to='/'>
@@ -43,7 +50,6 @@ const ProductScreen = () => {
                   </Col>
                 </Row>
               </ListGroup.Item>
-
               <ListGroup.Item>
                 <Row>
                   <Col>Status:</Col>
@@ -66,7 +72,10 @@ const ProductScreen = () => {
         </Col>
       </Row>
     </>
+    
   )
 }
 
 export default ProductScreen
+
+
