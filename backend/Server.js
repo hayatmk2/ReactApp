@@ -1,5 +1,5 @@
-const express = require('express')
-const products = require('./data/products')
+import { Express } from 'express'
+import products from './Data/products.js'
 
 const app = express()
 
@@ -7,9 +7,13 @@ app.get('/api/products', (req, res) => {
     res.json(products)
   })
 
-  app.get('/api/products/:id', (req, res) => {
+app.get('/api/products/:id', (req, res) => {
     const prod = products.find((p)=>p._id === req.params.id)
     res.json(prod)
+  })
+
+  app.get('/', (req, res) => {
+    res.json({'meg':'Hello world!'})
   })
 
 

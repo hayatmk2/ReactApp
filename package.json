@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "My business App",
   "main": "Server.js",
+  "type": "module",
   "scripts": {
-    "start": "node backend/Server"
+    "start": "node backend/Server",
+    "server": "nodemon backend/Server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,9 @@
   "homepage": "https://github.com/tezerac/ReactApp#readme",
   "dependencies": {
     "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "nodemon": "^2.0.20"
   }
 }
